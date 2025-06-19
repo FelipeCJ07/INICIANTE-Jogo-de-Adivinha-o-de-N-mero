@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Adivinhação</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-dice"></i> Adivinhe o Número</h1>
+            <p>Tente adivinhar o número secreto entre 1 e 100</p>
+        </div>
+        
+        <div class="game-stats">
+            <div class="stat-box">
+                <div class="value" id="attempts-count">10</div>
+                <div class="label">Tentativas</div>
+            </div>
+            <div class="stat-box">
+                <div class="value" id="min-value">1</div>
+                <div class="label">Mínimo</div>
+            </div>
+            <div class="stat-box">
+                <div class="value" id="max-value">100</div>
+                <div class="label">Máximo</div>
+            </div>
+        </div>
+        
+        <div class="difficulty-selector">
+            <button class="difficulty-btn active" data-difficulty="easy">Fácil</button>
+            <button class="difficulty-btn" data-difficulty="medium">Médio</button>
+            <button class="difficulty-btn" data-difficulty="hard">Difícil</button>
+        </div>
+        
+        <div class="input-area">
+            <input type="number" class="guess-input" id="guess-input" placeholder="Digite seu palpite..." min="1" max="100">
+        </div>
+        
+        <button class="btn" id="guess-btn"><i class="fas fa-paper-plane"></i> Enviar Palpite</button>
+        <button class="btn btn-restart" id="restart-btn"><i class="fas fa-redo"></i> Reiniciar</button>
+        
+        <div class="hint-box">
+            <div class="hint-text" id="hint-text">Digite um número e clique em Enviar!</div>
+        </div>
+        
+        <div class="attempts-list">
+            <h3><i class="fas fa-history"></i> Histórico de Tentativas</h3>
+            <div class="attempts-container" id="attempts-list"></div>
+        </div>
+        
+        <div class="game-over" id="game-over">
+            <h2 id="result-title">Parabéns!</h2>
+            <p id="result-message">Você acertou o número secreto!</p>
+            <p>Número secreto: <span id="secret-number" class="value">42</span></p>
+            <p>Tentativas utilizadas: <span id="used-attempts" class="value">5</span></p>
+            <button class="btn btn-restart" id="play-again-btn"><i class="fas fa-play"></i> Jogar Novamente</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
